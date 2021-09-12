@@ -1,5 +1,5 @@
 import express from "express";
-import { login, main } from "../../controller/home";
+import { login, main } from "../../controller";
 const router = express.Router();
 
 router.get("/", main);

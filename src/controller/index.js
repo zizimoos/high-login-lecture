@@ -1,6 +1,7 @@
 export const main = (req, res) => {
-  res.render("../views/home/main");
+  res.render("./home/main");
 };
+
 export const login = (req, res) => {
-  res.render("../views/home/login");
+  res.render("login");
 };
