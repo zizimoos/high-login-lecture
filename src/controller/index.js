@@ -1,4 +1,4 @@
-import users from "../../model/model";
+import UserStorage from "../model/UserStorage";
 
 export const main = (req, res) => {
   res.render("./home/main");
@@ -8,26 +8,23 @@ export const getLogin = (req, res) => {
   res.render("login");
 };
 
-export const loginProcess = async (req, res) => {
+export const loginProcess = (req, res) => {
   const { id, password } = req.body;
-  await console.log(id, password);
+  const response = {};
+  const users = UserStorage.getUsers("id", "password");
 
-  users.forEach((user) => {
-    if (id === user.id) {
-      console.log(`${user.id} 아이디 있습니다.`);
-      if (password === user.password) {
-        console.log(`비밀번호가 일치 합니다.`);
-        console.log(`login : true`);
-        return res.json({
-          success: true,
-        });
-      } else if (password !== user.password) {
-        console.log(`비밀번호가 일치하지 않습니다.`);
-        return res.json({
-          success: false,
-          msg: "로그인 실패",
-        });
-      }
+  if (users.id.includes(id)) {
+    const idx = users.id.indexOf(id);
+    if (users.password[idx] === password) {
+      response.success = true;
+      return res.json(response);
     }
-  });
+    response.success = false;
+    response.msg = "로그인에 실패하셨습니다.";
+    return res.json(response);
+  } else {
+    response.success = false;
+    response.msg = "로그인에 실패하셨습니다.";
+    return res.json(response);
+  }
 };
