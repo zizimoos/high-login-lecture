@@ -16,3 +16,7 @@ export const loginProcess = (req, res) => {
   console.log(response);
   return res.json(response);
 };
+
+export const getRegister = (req, res) => {
+  res.render("home/register");
+};
