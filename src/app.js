@@ -1,11 +1,14 @@
 import express from "express";
-import home from "./src/routes/home";
+import home from "./routes/home";
 
 const app = express();
 
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
-app.use(express.static(`${__dirname}/src/public`));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use(express.static(`${__dirname}/public`));
 app.use("/", home);
 
 export default app;
