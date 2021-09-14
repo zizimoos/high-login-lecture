@@ -11,7 +11,6 @@ export const getLogin = (req, res) => {
 
 export const loginProcess = (req, res) => {
   const user = new User(req.body);
-  console.log(user);
   const response = user._login();
   console.log(response);
   return res.json(response);
@@ -19,4 +18,11 @@ export const loginProcess = (req, res) => {
 
 export const getRegister = (req, res) => {
   res.render("home/register");
+};
+
+export const registerProcess = (req, res) => {
+  const user = new User(req.body);
+  const response = user._register();
+  console.log(response);
+  return res.json(response);
 };

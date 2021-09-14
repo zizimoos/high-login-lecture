@@ -14,6 +14,9 @@ class User {
     }
     return { success: false, msg: "아이디가 존재 하지 않습니다." };
   }
+  _register() {
+    UserStorage.save(this.body);
+  }
 }
 
 export default User;
