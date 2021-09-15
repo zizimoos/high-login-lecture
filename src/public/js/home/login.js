@@ -8,8 +8,6 @@ const login = () => {
     password: password.value,
   };
 
-  console.log(req, JSON.stringify(req));
-
   fetch("/login", {
     method: "POST",
     headers: {

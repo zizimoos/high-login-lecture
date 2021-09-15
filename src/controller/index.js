@@ -9,10 +9,9 @@ export const getLogin = (req, res) => {
   res.render("login");
 };
 
-export const loginProcess = (req, res) => {
+export const loginProcess = async (req, res) => {
   const user = new User(req.body);
-  const response = user._login();
-  console.log(response);
+  const response = await user._login();
   return res.json(response);
 };
 
@@ -23,6 +22,5 @@ export const getRegister = (req, res) => {
 export const registerProcess = (req, res) => {
   const user = new User(req.body);
   const response = user._register();
-  console.log(response);
   return res.json(response);
 };
