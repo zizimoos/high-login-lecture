@@ -12,6 +12,7 @@ const router = express.Router();
 router.get("/", main);
 router.get("/login", getLogin);
 router.post("/login", loginProcess);
+
 router.get("/register", getRegister);
 router.post("/register", registerProcess);
 

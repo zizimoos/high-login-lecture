@@ -15,7 +15,8 @@ class User {
     return { success: false, msg: "아이디가 존재 하지 않습니다." };
   }
   _register() {
-    UserStorage.save(this.body);
+    console.log("thisbody :", this.body);
+    UserStorage._save(this.body);
   }
 }
 
