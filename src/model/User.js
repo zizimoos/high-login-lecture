@@ -1,3 +1,4 @@
+import { response } from "express";
 import UserStorage from "./UserStorage";
 
 class User {
@@ -14,9 +15,13 @@ class User {
     }
     return { success: false, msg: "아이디가 존재 하지 않습니다." };
   }
-  _register() {
-    console.log("thisbody :", this.body);
-    UserStorage._save(this.body);
+  async _register() {
+    try {
+      await UserStorage._save(this.body);
+      return response;
+    } catch (err) {
+      return { success: false, msg: err };
+    }
   }
 }
 

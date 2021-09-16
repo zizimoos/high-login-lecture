@@ -19,8 +19,8 @@ export const getRegister = (req, res) => {
   res.render("home/register");
 };
 
-export const registerProcess = (req, res) => {
+export const registerProcess = async (req, res) => {
   const user = new User(req.body);
-  const response = user._register();
+  const response = await user._register();
   return res.json(response);
 };
