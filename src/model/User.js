@@ -18,7 +18,7 @@ class User {
   async _register() {
     try {
       await UserStorage._save(this.body);
-      return response;
+      return { success: true };
     } catch (err) {
       return { success: false, msg: err };
     }

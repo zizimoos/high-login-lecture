@@ -7,8 +7,32 @@
     "구독과",
     "rissssa",
     "vita704",
-    "bancocredo@daum.net"
+    "bancocredo@daum.net",
+    "zizimoosss",
+    "zizim"
   ],
-  "password": ["1234", "1234", "12", "123456", "12345678", "12", "12", "12"],
-  "name": ["지지", "테사", "henry", "black", "좋아요", "re", "henry", "qw"]
+  "password": [
+    "1234",
+    "1234",
+    "12",
+    "123456",
+    "12345678",
+    "12",
+    "12",
+    "12",
+    "1234",
+    "1234"
+  ],
+  "name": [
+    "지지",
+    "테사",
+    "henry",
+    "black",
+    "좋아요",
+    "re",
+    "henry",
+    "qw",
+    null,
+    null
+  ]
 }
