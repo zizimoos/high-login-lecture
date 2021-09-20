@@ -1,4 +1,5 @@
 import express from "express";
+import "dotenv/config";
 import home from "./routes/home";
 
 const app = express();
